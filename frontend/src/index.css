@@ -116,6 +116,7 @@ header{
     text-decoration: none;
 }
 
+
 .nav_link{
     color:#FFE484;
     font-size:large;
@@ -125,7 +126,27 @@ header{
 }
 .login_form, .mydashboard{
     background-color: #563D7C;
+
+}
+.container.mt-4.rounded.border.login_form.shadow-lg {
+    height: 80vh;
 }
 .login_heading, .register_heading{
     color:#FFE484;
+}
+
+@media (max-width:480px) {
+    .logo_text{
+        font-size:1.5rem;
+    }
+    a.nav_link.p-2.border.rounded {
+        font-size: 0.8rem;
+    }
+    li.nav-item.nav-link.link-unstyled {
+        padding: 0;
+        margin: 3px;
+    }
+    header .container{
+        padding: 0;
+    }
 }

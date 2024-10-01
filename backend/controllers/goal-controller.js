@@ -13,13 +13,14 @@ export const setGoal=asyncHandler(async(req,res)=>{
         throw new Error("Please add a new text")
     }
         // const goal=new Goal(req.body)
-        // await goal.save();
+        // await goal.save();   
         const goal=await Goal.create({
             text:req.body.text,
             user:req.user.id
         })
         res.status(200).json(goal)
 })
+
 export const updateGoal=asyncHandler(async(req,res)=>{
     const id=req.params.id;
     const goal=await Goal.findById(id);
@@ -59,8 +60,15 @@ export const deleteGoal=asyncHandler(async(req,res)=>{
             res.status(401)
             throw new Error('User not authorized')
         }
+        // console.log("goalid",req.params.id);
+        
     await Goal.deleteOne(goal);
 
     // res.status(201).json(id);
     res.status(200).json({ id: req.params.id })
 })
+
+
+
+
+

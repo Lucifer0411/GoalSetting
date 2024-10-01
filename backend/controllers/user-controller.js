@@ -35,6 +35,8 @@ export const registerUser=asyncHandler(async(req,res)=>{
         throw new Error("Invalid user data")
     }
 })
+
+
 export const loginUser=asyncHandler(async(req,res)=>{
     const {email,password}=req.body
     if(!password || !email){
@@ -59,6 +61,8 @@ export const loginUser=asyncHandler(async(req,res)=>{
     
 
 })
+
+
 export const getMe=asyncHandler(async(req,res)=>{
     res.status(200).json(req.user)
 

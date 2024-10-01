@@ -3,7 +3,6 @@ import dotenv from 'dotenv'
 import goalRouter from './routes/goalRoutes.js';
 import userRouter from './routes/userRoutes.js';
 import { errorHandler } from './middleware/errorMiddleware.js';
-// import colors from 'colors'
 import connectDB from './config/db.js';
 import cors from 'cors'
 

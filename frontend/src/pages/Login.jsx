@@ -50,6 +50,8 @@ function Login() {
   if(isLoading){
       return <Spinner/>
     }
+
+
   return (
     <div className="container mt-4 rounded border  login_form shadow-lg">
       <section className="rounded-3 p-2 login_form text-center mt-4">
@@ -64,24 +66,39 @@ function Login() {
           <label className='h3' htmlFor='email'>Email:</label>
           <span className="input-group">
           <i className="input-group-text bi bi-envelope"></i>
-          <input className='form-control'  type="email" name="email" id="email" value={email} onChange={handleChange} placeholder="Enter your email..."/>
+          <input className='form-control'  type="email" name="email" id="email" value={email} onChange={handleChange} placeholder="Enter your email..." autoComplete="username"/>
           </span>
           </div>
           <div className="form-group mt-3">
           <label className='h3' htmlFor='password'>Password:</label>
           <span className="input-group">
           <i className="input-group-text bi bi-file-earmark-lock"></i>
-          <input className='form-control' type="password" name="password" id="password" value={password} onChange={handleChange} placeholder="Enter your password..."/>
+          <input className='form-control' type="password" name="password" id="password" value={password} onChange={handleChange} placeholder="Enter your password..." autoComplete="current-password"/>
+          <i className="input-group-text bi bi-eye-fill" id="eye" onClick={handleViewPass}></i>
           </span>
           </div>
           <input className='btn-lg btn btn-outline-light m-2 mt-3' type="submit" value="Submit" />
 
         </form>
       </section>
-      
+
     </div>
+    
  
   )
 }
+function handleViewPass(e){
+  const pass=document.getElementById('password')
+  if(pass.type=='password'){
+    pass.type='text'
+    e.target.classList.remove('bi-eye-fill')
+    e.target.classList.add('bi-eye-slash-fill')
+  }
+  else{
+    pass.type='password'
+    e.target.classList.remove('bi-eye-slash-fill')
+    e.target.classList.add('bi-eye-fill')
+  }
 
+}
 export default Login

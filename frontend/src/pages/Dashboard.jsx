@@ -38,8 +38,8 @@ function Dashboard() {
   return (
     <div className='container-fluid  pt-5 mydashboard p-4 text-light' >
       <section className='text-center'>
-        <h1>Welcome {user && user.name.toUpperCase()}</h1>
         <p className='display-4'>Dashboard </p>
+        <h1>Welcome {user && user.name.toUpperCase()}</h1>
       </section>
       <GoalForm/>
       <section className='container mt-5 text-start '>
