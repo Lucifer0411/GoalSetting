@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const API_URL='http://localhost:8000/api/users/'
+export const API_URL='https://goalsetting-backend.onrender.com/'
 
 const register=async(userData)=>{
     const response=await axios.post(API_URL,userData)
